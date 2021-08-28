@@ -30,11 +30,12 @@ LABEL_MAINMENU,
     {ICON_EXTRUDE,              LABEL_EXTRUDE},
     {ICON_PRINT,                LABEL_PRINT},
     {ICON_SETTINGS,             LABEL_SETTINGS},
-    #ifdef AUTO_BED_LEVELING_BILINEAR
-      {ICON_LEVELING,             LABEL_LEVELING},
-    #else
-      {ICON_BACKGROUND,           LABEL_BACKGROUND},
-    #endif
+    {ICON_LEVELING,             LABEL_LEVELING},
+    //#ifdef AUTO_BED_LEVELING_BILINEAR
+    //  {ICON_LEVELING,             LABEL_LEVELING},
+    //#else
+    //  {ICON_BACKGROUND,           LABEL_BACKGROUND},
+    //#endif
     {ICON_BACKGROUND,           LABEL_BACKGROUND},
     {ICON_BACK,                 LABEL_BACK}}
     #endif
@@ -98,7 +99,7 @@ void menuCallBackMainPage() {
         #ifdef AUTO_BED_LEVELING_BILINEAR
           infoMenu.menu[++infoMenu.cur] = menuAutoLeveling;
         #else
-          //infoMenu.menu[++infoMenu.cur] = menuManualLeveling;
+          infoMenu.menu[++infoMenu.cur] = menuManualLeveling;
         #endif
         break;
       case KEY_ICON_7: infoMenu.cur--;  break;
