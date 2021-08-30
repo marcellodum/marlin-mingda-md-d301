@@ -159,7 +159,7 @@ namespace ExtUI {
   void setTargetTemp_celsius(const float, const extruder_t);
   void setTargetFan_percent(const float, const fan_t);
   void setAxisPosition_mm(const float, const axis_t);
-  void setAxisPosition_mm(const float, const extruder_t, float e_mm_m=0);
+  void setAxisPosition_mm(const float, const extruder_t);
   void setAxisSteps_per_mm(const float, const axis_t);
   void setAxisSteps_per_mm(const float, const extruder_t);
   void setAxisMaxFeedrate_mm_s(const feedRate_t, const axis_t);

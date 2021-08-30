@@ -392,12 +392,11 @@ namespace ExtUI {
     line_to_current_position(MMM_TO_MMS(manual_feedrate_mm_m[axis]));
   }
 
-  void setAxisPosition_mm(const float position, const extruder_t extruder, float e_mm_m) {
-    float actualMM_M = e_mm_m ? e_mm_m : manual_feedrate_mm_m.e;
+  void setAxisPosition_mm(const float position, const extruder_t extruder) {
     setActiveTool(extruder, true);
 
     current_position.e = position;
-    line_to_current_position(MMM_TO_MMS(actualMM_M));
+    line_to_current_position(MMM_TO_MMS(manual_feedrate_mm_m.e));
   }
 
   void setActiveTool(const extruder_t extruder, bool no_move) {
@@ -774,7 +773,7 @@ namespace ExtUI {
     #if HAS_BED_PROBE
       return probe_offset.z;
     #elif ENABLED(BABYSTEP_DISPLAY_TOTAL)
-      return babystep.axis_total[BS_TOTAL_AXIS(Z_AXIS) + 1];
+      return (planner.steps_to_mm[Z_AXIS] * babystep.axis_total[BS_TODO_AXIS(Z_AXIS)]);
     #else
       return 0.0;
     #endif
@@ -785,7 +784,7 @@ namespace ExtUI {
       if (WITHIN(value, Z_PROBE_OFFSET_RANGE_MIN, Z_PROBE_OFFSET_RANGE_MAX))
         probe_offset.z = value;
     #elif ENABLED(BABYSTEP_DISPLAY_TOTAL)
-      babystep.add_mm(Z_AXIS, (value - babystep.axis_total[BS_TOTAL_AXIS(Z_AXIS) + 1]));
+      babystep.add_mm(Z_AXIS, (value - getZOffset_mm()));
     #else
       UNUSED(value);
     #endif

@@ -227,7 +227,7 @@ static const uint8_t ili9341_init_sequence[] = { // 0x9341 - ILI9341
   U8G_ESC_DLY(10),
   0x01,
   U8G_ESC_DLY(100), U8G_ESC_DLY(100),
-  0x36, U8G_ESC_ADR(1), 0xA8,
+  0x36, U8G_ESC_ADR(1), 0xE8,
   U8G_ESC_ADR(0), 0x3A, U8G_ESC_ADR(1), 0x55,
   U8G_ESC_ADR(0), LCD_COLUMN, U8G_ESC_ADR(1), 0x00, 0x00, 0x01, 0x3F,
   U8G_ESC_ADR(0), LCD_ROW,    U8G_ESC_ADR(1), 0x00, 0x00, 0x00, 0xEF,
