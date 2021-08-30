@@ -1515,6 +1515,10 @@ void MarlinUI::update() {
     #include "../gcode/queue.h"
   #endif
 
+  #if ENABLED(POWER_LOSS_RECOVERY)
+    #include "../feature/power_loss_recovery.h"
+  #endif
+
   void MarlinUI::pause_print() {
     #if HAS_LCD_MENU
       synchronize(GET_TEXT(MSG_PAUSE_PRINT));
