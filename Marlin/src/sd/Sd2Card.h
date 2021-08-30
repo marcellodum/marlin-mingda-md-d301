@@ -38,7 +38,7 @@
 
 #include <stdint.h>
 
-uint16_t const SD_INIT_TIMEOUT = 1000,    // init timeout ms
+uint16_t const SD_INIT_TIMEOUT = 2000,    // init timeout ms
                SD_ERASE_TIMEOUT = 10000,  // erase timeout ms
                SD_READ_TIMEOUT = 300,     // read timeout ms
                SD_WRITE_TIMEOUT = 600;    // write time out ms
