@@ -230,6 +230,7 @@ extern uint8_t marlin_debug_flags;
 #define SERIAL_ECHOLIST(pre,V...)   do{ SERIAL_ECHOPGM(pre); _SLST_N(NUM_ARGS(V),V); }while(0)
 #define SERIAL_ECHOLIST_N(N,V...)   _SLST_N(N,LIST_N(N,V))
 
+#define SERIAL_ECHO_P(P)            (serialprintPGM(P))
 #define SERIAL_ECHOPGM_P(P)         (serialprintPGM(P))
 #define SERIAL_ECHOLNPGM_P(P)       (serialprintPGM(P "\n"))
 
