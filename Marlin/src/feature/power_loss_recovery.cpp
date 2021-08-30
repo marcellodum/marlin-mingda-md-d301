@@ -289,7 +289,6 @@ void PrintJobRecovery::resume() {
 
   const uint32_t resume_sdpos = info.sdpos; // Get here before the stepper ISR overwrites it
 
-  gcode.process_subcommands_now_P(PSTR("M117 Resume priting, please wait..."));
   #if HAS_LEVELING
     // Make sure leveling is off before any G92 and G28
     gcode.process_subcommands_now_P(PSTR("M420 S0 Z0"));
