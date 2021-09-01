@@ -1,6 +1,7 @@
 #include "../TSC_Menu.h"
 
 #define LEVELING_POINT_MOVE_Z      10.0f  // Z-axis position when nozzle move to next point
+#define LEVELING_POINT_HEIGHT_Z		0.2f  // Z-axis position when leveling
 #define LEVELING_POINT_Z_FEEDRATE    600  // (mm/min) Z axis move feedrate
 #define LEVELING_POINT_XY_FEEDRATE  6000  // (mm/min) X and Y axes move feedrate
 #define LEVELING_POINT_1_X         (X_MIN_POS + 30)
@@ -106,7 +107,7 @@ void moveToLevelingPoint(uint8_t point)
   storeCmd(buffer);
   snprintf(buffer, 100, "G0 X%d Y%d F%d\n", pointPosition[point][0], pointPosition[point][1], LEVELING_POINT_XY_FEEDRATE);
   storeCmd(buffer);
-  snprintf(buffer, 100, "G0 Z%.3f F%d\n", LEVELING_POINT_MOVE_Z, LEVELING_POINT_Z_FEEDRATE);
+  snprintf(buffer, 100, "G0 Z%.3f F%d\n", LEVELING_POINT_HEIGHT_Z, LEVELING_POINT_Z_FEEDRATE);
   storeCmd(buffer);
 }
 
