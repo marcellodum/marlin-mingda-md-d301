@@ -13,7 +13,7 @@
 #define LEVELING_POINT_4_X         (X_MIN_POS + 30)
 #define LEVELING_POINT_4_Y         (Y_MAX_POS - 30)
 
-#ifdef AUTO_BED_LEVELING_BILINEAR
+#if ENABLED(AUTO_BED_LEVELING_BILINEAR) || ENABLED(AUTO_BED_LEVELING_UBL)
 
 #include "../../../../../feature/bltouch.h"
 
@@ -21,14 +21,20 @@ const MENUITEMS autoLevelingItems = {
 // title
 LABEL_ABL,
 // icon                        label
- {{ICON_LEVELING,              LABEL_ABL},
-  {ICON_BLTOUCH_DEPLOY,        LABEL_BLTOUCH_DEPLOY},
-  {ICON_BLTOUCH_STOW,          LABEL_BLTOUCH_STOW},
-  {ICON_BLTOUCH_TEST,          LABEL_BLTOUCH_TEST},
-  {ICON_PROBE_OFFSET,          LABEL_PROBE_OFFSET},
-  {ICON_BABYSTEP,              LABEL_BABYSTEP},
-  {ICON_EM_STOP,               LABEL_EMERGENCYSTOP},
-  {ICON_BACK,                  LABEL_BACK},}
+ {
+  #if ENABLED(AUTO_BED_LEVELING_BILINEAR)
+    {ICON_LEVELING,              LABEL_ABL},
+  #else 
+    {ICON_LEVELING,              LABEL_ABL},
+  #endif
+    {ICON_BLTOUCH_DEPLOY,        LABEL_BLTOUCH_DEPLOY},
+    {ICON_BLTOUCH_STOW,          LABEL_BLTOUCH_STOW},
+    {ICON_BLTOUCH_TEST,          LABEL_BLTOUCH_TEST},
+    {ICON_PROBE_OFFSET,          LABEL_PROBE_OFFSET},
+    {ICON_BABYSTEP,              LABEL_BABYSTEP},
+    {ICON_EM_STOP,               LABEL_EMERGENCYSTOP},
+    {ICON_BACK,                  LABEL_BACK},
+  }
 };
 
 void menuCallBackAutoBedLeveling(void)
@@ -37,9 +43,14 @@ void menuCallBackAutoBedLeveling(void)
   switch(key_num)
   {
     case KEY_ICON_0:
+      #if ENABLED(AUTO_BED_LEVELING_BILINEAR)
       storeCmd("G28");
       storeCmd("G29");
       storeCmd("M500");
+      #else 
+        // UBL
+        infoMenu.menu[++infoMenu.cur] = menuUBL;
+      #endif
       break;
     case KEY_ICON_1:
       storeCmd("M280 P0 S10\n");

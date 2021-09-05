@@ -77,7 +77,7 @@ void menuCallBackMainPage() {
       case KEY_ICON_1: infoMenu.menu[++infoMenu.cur] = menuMove;      break;
       case KEY_ICON_2: infoMenu.menu[++infoMenu.cur] = menuHome;      break;
       case KEY_ICON_3:
-        #ifdef AUTO_BED_LEVELING
+        #if ENABLED(D301_AUTO_LEVELING)
           infoMenu.menu[++infoMenu.cur] = menuAutoLeveling;
         #else
           infoMenu.menu[++infoMenu.cur] = menuManualLeveling;
@@ -96,7 +96,7 @@ void menuCallBackMainPage() {
       case KEY_ICON_3: infoMenu.menu[++infoMenu.cur] = menuPrint;     break;
       case KEY_ICON_4: infoMenu.menu[++infoMenu.cur] = menuSettings;  break;
       case KEY_ICON_5:
-        #ifdef AUTO_BED_LEVELING_BILINEAR
+        #if ENABLED(D301_AUTO_LEVELING)
           infoMenu.menu[++infoMenu.cur] = menuAutoLeveling;
         #else
           infoMenu.menu[++infoMenu.cur] = menuManualLeveling;
