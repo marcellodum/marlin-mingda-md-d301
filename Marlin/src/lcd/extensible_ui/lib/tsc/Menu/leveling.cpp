@@ -25,7 +25,7 @@ LABEL_ABL,
   #if ENABLED(AUTO_BED_LEVELING_BILINEAR)
     {ICON_LEVELING,              LABEL_ABL},
   #else 
-    {ICON_LEVELING,              LABEL_ABL},
+    {ICON_LEVELING,              LABEL_UBL},
   #endif
     {ICON_BLTOUCH_DEPLOY,        LABEL_BLTOUCH_DEPLOY},
     {ICON_BLTOUCH_STOW,          LABEL_BLTOUCH_STOW},

@@ -29,6 +29,7 @@
     #define EN_POINT_3              "Point 3"
     #define EN_POINT_4              "Point 4"
     #define EN_ABL                  "ABL"
+    #define EN_UBL                  "UBL"
     #define EN_BLTOUCH              "Bltouch"
     #define EN_BLTOUCH_TEST         "Test"
     #define EN_BLTOUCH_DEPLOY       "Deploy"

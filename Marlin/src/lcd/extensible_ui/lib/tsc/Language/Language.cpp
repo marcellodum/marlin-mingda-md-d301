@@ -74,6 +74,7 @@ const char *const en_pack[LABEL_NUM]={
   EN_POINT_3,
   EN_POINT_4,
   EN_ABL,
+  EN_UBL,
   EN_BLTOUCH,
   EN_BLTOUCH_TEST,
   EN_BLTOUCH_DEPLOY,
