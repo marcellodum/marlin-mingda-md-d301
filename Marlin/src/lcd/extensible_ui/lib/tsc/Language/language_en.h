@@ -149,5 +149,6 @@
     #define EN_TIPS                 "Tips"
     #define EN_EEPROM_SAVE_SUCCESS  "EEPROM parameters saved successfully"
     #define EN_EEPROM_SAVE_FAILED   "EEPROM parameters saved failed"
+    #define EN_START                "Start"
 
 #endif
