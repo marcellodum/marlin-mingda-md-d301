@@ -195,6 +195,7 @@ const char *const en_pack[LABEL_NUM]={
   EN_EEPROM_SAVE_SUCCESS,
   EN_EEPROM_SAVE_FAILED,
   EN_START,
+  EN_SAVE,
 };
 
 const char *const cn_pack[LABEL_NUM]={
