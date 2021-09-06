@@ -9,16 +9,20 @@ const GUI_RECT labelUpdateRect = {0,              (LCD_HEIGHT_PIXEL - ICON_HEIGH
 
 const char iconBmpName[][32]={
 "Heat", "Move", "Home", "Print", "Extrude", "Fan", "Settings", "Leveling", "Inc", "Dec",
-"Nozzle", "bed", "1_degree", "5_degree", "10_degree", "Stop", "Back", "x_inc", "y_inc", "z_inc",
-"01_mm", "1_mm", "10_mm", "x_dec", "y_dec","z_dec", "x_home", "y_home", "z_home", "Folder",
-"file", "Page_up", "Page_down", "Pause", "Resume", "Load", "Unload", "slow_speed", "normal_speed", "fast_speed",  
-"e_1_mm", "e_5_mm", "e_10_mm", "fan_full_speed", "fan_half_speed", "rotate_ui", "Language", "touchscreen_adjust", "More", "screen_info",
-"BackGroundColor", "FontColor", "Disconnect", "baud_rate", "Percentage", "BabyStep", "001_mm", "onboard_sd", "ontft_sd", "U_Disk",
-"Runout", "Point_1", "Point_2", "Point_3", "Point_4", "marlin", "BigTreeTech", "gcode", "BLTouch", "bltouch_deploy",
-"bltouch_stow", "bltouch_test", "bltouch_repeat", "screen_settings", "machine_settings", "feature_settings", "probe_offset", "eeprom_save", "SilentOn", "shut_down",
-"RGB_Settings", "RGB_Red", "RGB_Green", "RGB_Blue", "RGB_White", "RGB_Off", "Preheat_Both", "Preheat_PLA", "Preheat_PETG", "Preheat_ABS",
-"PowerS~1", "Custom", "Custom0", "Custom1", "Custom2", "Custom3", "Custom4", "Custom5", "Custom6", "Home_Move", "Heat_Fan",
-"manual_level", "CoolDown", "Silent~1","Status_Nozzle","Status_Bed","Status_Fan","MainMenu","status_speed","status_flow","InfoBox_part1", "InfoBox_part2", "EM_Stop",
+"Nozzle", "bed", "1_deg", "5_deg", "10_deg", "Stop", "Back", "x_inc", "y_inc", "z_inc",
+"01_mm", "1_mm", "10_mm", "100_mm", "x_dec", "y_dec","z_dec", "x_home", "y_home", "z_home", "Folder",
+"file", "Page_up", "Page_down", "Pause", "Resume", "Load", "Unload", "slow_s", "normal_s", "fast_s",  
+"e_1_mm", "e_5_mm", "e_10_mm", "e_100_mm", "e_200_mm", "e_1_per", "e_5_per", "e_10_per", "fan_fs", "fan_hs", "rotateui", "Language", "ts_adj", "More", "scr_info",
+"BackGroundColor", "FontColor", "Disconn", "baudrate", "Percent", "BabyStep", "001_mm", "onb_sd", "ontft_sd", "U_Disk",
+"Runout", "Point_1", "Point_2", "Point_3", "Point_4", "Point_5", "marlin", "BTT", "gcode", "BLTouch", "BLT_dep",
+"BLT_stw", "BLT_test", "BLT_rpt", "BLT_rst", "scr_set", "mac_set", "feat_set", "probeofs", "eepromsv", "eepromrs", "eepromrt", "SilentOn", "shutdown",
+"RGBSet", "RGBRed", "RGBGreen", "RGBBlue", "RGBWhite", "RGBOff", "PH_Both", "Preheat_PLA", "Preheat_PETG", "Preheat_ABS",
+"PowerSup", "Custom", "Custom0", "Custom1", "Custom2", "Custom3", "Custom4", "Custom5", "Custom6", "HomeMove", "Heat_Fan",
+"manual_lev", "CoolDown", "Silent~1","STNozzle","ST_Bed","ST_Fan","MainMenu","st_speed","st_flow", "InfoBox_part1", "InfoBox_part2", "InfoBox", "Stop",
+"apply", "brightn", "c_light", "chamber", "conn_set", "dis_step", "g_bed", "g_chamb", "g_nozzle",
+"lev_corn", "levedged", "level_off", "level_on", "marlin_m", "meshedit", "Mesh_OK", "nozzle_d", "nozzle_u",
+"param", "pid", "preheat", "p_bed", "p_fan", "p_flow", "p_nozzle", "p_speed", "p_timer", "p_zlayer",
+"reset_v", "sound", "tune_ext", "tuning", "z_align", "z_fade"
 };
 
 #define LCD_DMA_MAX_TRANS	65535		// DMA 65535 bytes one frame
