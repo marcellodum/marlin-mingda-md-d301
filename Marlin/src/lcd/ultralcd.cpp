@@ -1443,7 +1443,7 @@ void MarlinUI::update() {
     #endif
   }
 
-  #include "../Marlin.h"
+  #include "../MarlinCore.h"
   #include "../module/printcounter.h"
 
   PGM_P print_paused = GET_TEXT(MSG_PRINT_PAUSED);
