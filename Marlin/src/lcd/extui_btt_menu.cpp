@@ -46,7 +46,7 @@ namespace ExtUI {
      *   WRITE(pin,value)
      *   READ(pin)
      */
-    // LCD_Setup(); // move to setup() for fast startup speed
+    LCD_Setup(); // move to setup() for fast startup speed
   }
   void onIdle() {
     LCD_init_Reg();
@@ -130,6 +130,18 @@ namespace ExtUI {
   void onRecoveryChecked() {
     infoMenu.menu[++infoMenu.cur] = menuPowerFailed;
   }
+
+  #if ENABLED(POWER_LOSS_RECOVERY)
+    void OnPowerLossResume() {
+      // Called on resume from power-loss
+    }
+  #endif
+
+  #if HAS_PID_HEATING
+    void OnPidTuning(const result_t rst) {
+      // Called for temperature PID tuning result
+    }
+  #endif  
 }
 
 #endif // EXTUI_EXAMPLE && EXTENSIBLE_UI

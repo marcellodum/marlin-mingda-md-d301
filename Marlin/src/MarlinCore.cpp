@@ -177,11 +177,12 @@
   #include "feature/prusa_MMU2/mmu2.h"
 #endif
 
-#if HAS_DRIVER(L6470)
-  #include "libs/L6470/L6470_Marlin.h"
+#if HAS_L64XX
+  #include "libs/L64XX/L64XX_Marlin.h"
 #endif
 
 const char NUL_STR[] PROGMEM = "",
+           M112_KILL_STR[] PROGMEM = "M112 Shutdown",
            G28_STR[] PROGMEM = "G28",
            M21_STR[] PROGMEM = "M21",
            M23_STR[] PROGMEM = "M23 %s",
@@ -406,7 +407,7 @@ void startOrResumeJob() {
     thermalManager.zero_fan_speeds();
     wait_for_heatup = false;
     #if ENABLED(POWER_LOSS_RECOVERY)
-      card.removeJobRecoveryFile();
+      recovery.purge();
     #endif
     #ifdef EVENT_GCODE_SD_STOP
       queue.inject_P(PSTR(EVENT_GCODE_SD_STOP));
@@ -553,7 +554,7 @@ void manage_inactivity(const bool ignore_stepper_queue/*=false*/) {
         bool oldstatus;
         switch (active_extruder) {
           default:
-          #define _CASE_EN(N) case N: oldstatus = E##N_ENABLE_READ(); enable_E##N(); break;
+          #define _CASE_EN(N) case N: oldstatus = E##N##_ENABLE_READ(); enable_E##N(); break;
           REPEAT(E_STEPPERS, _CASE_EN);
         }
       #endif
@@ -605,7 +606,7 @@ void manage_inactivity(const bool ignore_stepper_queue/*=false*/) {
   #endif
 
   #if ENABLED(MONITOR_L6470_DRIVER_STATUS)
-    L6470.monitor_driver();
+    L64xxManager.monitor_driver();
   #endif
 
   // Limit check_axes_activity frequency to 10Hz
@@ -618,7 +619,7 @@ void manage_inactivity(const bool ignore_stepper_queue/*=false*/) {
   #if PIN_EXISTS(FET_SAFETY)
     static millis_t FET_next;
     if (ELAPSED(ms, FET_next)) {
-      FET_next = ms + FET_SAFETY_DELAY;  // 2uS pulse every FET_SAFETY_DELAY mS
+      FET_next = ms + FET_SAFETY_DELAY;  // 2µs pulse every FET_SAFETY_DELAY mS
       OUT_WRITE(FET_SAFETY_PIN, !FET_SAFETY_INVERTED);
       DELAY_US(2);
       WRITE(FET_SAFETY_PIN, FET_SAFETY_INVERTED);
@@ -822,6 +823,20 @@ void NVIC_SetPriorityGrouping(uint32_t PriorityGroup);
 void LCD_Setup();
 void setup() {
 
+  HAL_init();
+
+  #if HAS_L64XX
+    L64xxManager.init();  // Set up SPI, init drivers
+  #endif
+
+  #if ENABLED(SMART_EFFECTOR) && PIN_EXISTS(SMART_EFFECTOR_MOD)
+    OUT_WRITE(SMART_EFFECTOR_MOD_PIN, LOW);   // Put Smart Effector into NORMAL mode
+  #endif
+
+  #if ENABLED(MAX7219_DEBUG)
+    max7219.init();
+  #endif
+
   #if ENABLED(DISABLE_DEBUG)
     // Disable any hardware debug to free up pins for IO
     #ifdef JTAGSWD_DISABLE
@@ -839,26 +854,17 @@ void setup() {
       #error "DISABLE_JTAG is not supported for the selected MCU/Board"
     #endif
   #endif
-
+  
   NVIC_SetPriorityGrouping(0x3);
 
-  LCD_Setup();
+  //LCD_Setup();
 
-  
   #if PIN_EXISTS(LED)
     OUT_WRITE(LED_PIN, LOW);
   #endif
 
   #if PIN_EXISTS(USB_CONNECT)
     OUT_WRITE(USB_CONNECT_PIN, !USB_CONNECT_INVERTING);  // USB clear connection
-  #endif
-
-  #if HAS_DRIVER(L6470)
-    L6470.init();         // setup SPI and then init chips
-  #endif
-
-  #if ENABLED(MAX7219_DEBUG)
-    max7219.init();
   #endif
 
   #if HAS_FILAMENT_SENSOR
@@ -1145,10 +1151,9 @@ void setup() {
  *  - Call inactivity manager
  */
 void loop() {
+  do {
 
-  for (;;) {
-
-    idle(); // Do an idle first so boot is slightly faster
+    idle();
 
     #if ENABLED(SDSUPPORT)
       card.checkautostart();
@@ -1158,5 +1163,10 @@ void loop() {
     queue.advance();
 
     endstops.event_handler();
-  }
+
+  } while (false        // Return to caller for best compatibility
+    #ifdef __AVR__
+      || true           // Loop forever on slower (AVR) boards
+    #endif
+  );
 }

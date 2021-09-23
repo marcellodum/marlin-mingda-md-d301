@@ -66,7 +66,6 @@ extern uint8_t marlin_debug_flags;
 #define PORT_REDIRECT(p)        _PORT_REDIRECT(1,p)
 #define PORT_RESTORE()          _PORT_RESTORE(1)
 
-#define SERIAL_CHAR(x)          SERIAL_OUT(write, x)
 #define SERIAL_ECHO(x)          SERIAL_OUT(print, x)
 #define SERIAL_ECHO_F(V...)     SERIAL_OUT(print, V)
 #define SERIAL_ECHOLN(x)        SERIAL_OUT(println, x)
@@ -75,13 +74,29 @@ extern uint8_t marlin_debug_flags;
 #define SERIAL_PRINTF(V...)     SERIAL_OUT(printf, V)
 #define SERIAL_FLUSH()          SERIAL_OUT(flush)
 
-#if defined(__STM32F1__) || defined(ARDUINO_ARCH_STM32)
+#ifdef ARDUINO_ARCH_STM32
   #define SERIAL_FLUSHTX()      SERIAL_OUT(flush)
 #elif TX_BUFFER_SIZE > 0
   #define SERIAL_FLUSHTX()      SERIAL_OUT(flushTX)
 #else
   #define SERIAL_FLUSHTX()
 #endif
+
+// Print up to 10 chars from a list
+#define __CHAR_N(N,V...)  _CHAR_##N(V)
+#define _CHAR_N(N,V...)   __CHAR_N(N,V)
+#define _CHAR_1(c)        SERIAL_OUT(write, c)
+#define _CHAR_2(a,b)      do{ _CHAR_1(a); _CHAR_1(b); }while(0)
+#define _CHAR_3(a,V...)   do{ _CHAR_1(a); _CHAR_2(V); }while(0)
+#define _CHAR_4(a,V...)   do{ _CHAR_1(a); _CHAR_3(V); }while(0)
+#define _CHAR_5(a,V...)   do{ _CHAR_1(a); _CHAR_4(V); }while(0)
+#define _CHAR_6(a,V...)   do{ _CHAR_1(a); _CHAR_5(V); }while(0)
+#define _CHAR_7(a,V...)   do{ _CHAR_1(a); _CHAR_6(V); }while(0)
+#define _CHAR_8(a,V...)   do{ _CHAR_1(a); _CHAR_7(V); }while(0)
+#define _CHAR_9(a,V...)   do{ _CHAR_1(a); _CHAR_8(V); }while(0)
+#define _CHAR_10(a,V...)  do{ _CHAR_1(a); _CHAR_9(V); }while(0)
+
+#define SERIAL_CHAR(V...) _CHAR_N(NUM_ARGS(V),V)
 
 // Print up to 12 pairs of values. Odd elements auto-wrapped in PSTR().
 #define __SEP_N(N,V...)   _SEP_##N(V)
@@ -231,11 +246,9 @@ extern uint8_t marlin_debug_flags;
 #define SERIAL_ECHOLIST_N(N,V...)   _SLST_N(N,LIST_N(N,V))
 
 #define SERIAL_ECHO_P(P)            (serialprintPGM(P))
-#define SERIAL_ECHOPGM_P(P)         (serialprintPGM(P))
-#define SERIAL_ECHOLNPGM_P(P)       (serialprintPGM(P "\n"))
 
-#define SERIAL_ECHOPGM(S)           (serialprintPGM(PSTR(S)))
-#define SERIAL_ECHOLNPGM(S)         (serialprintPGM(PSTR(S "\n")))
+#define SERIAL_ECHOPGM(S)           (SERIAL_ECHO_P(PSTR(S)))
+#define SERIAL_ECHOLNPGM(S)         (SERIAL_ECHO_P(PSTR(S "\n")))
 
 #define SERIAL_ECHOPAIR_F_P(P,V...) do{ serialprintPGM(P); SERIAL_ECHO_F(V); }while(0)
 #define SERIAL_ECHOLNPAIR_F_P(V...) do{ SERIAL_ECHOPAIR_F_P(V); SERIAL_EOL(); }while(0)
