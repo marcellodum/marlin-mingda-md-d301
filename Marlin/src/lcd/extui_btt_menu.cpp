@@ -70,9 +70,9 @@ namespace ExtUI {
   };
 
   void onPlayTone(const uint16_t frequency, const uint16_t duration) {
-    CRITICAL_SECTION_START;
+    CRITICAL_SECTION_START();
     ::tone(BEEPER_PIN, frequency, duration);
-    CRITICAL_SECTION_END;
+    CRITICAL_SECTION_END();
   }
   void onPrintTimerStarted() {}
   void onPrintTimerPaused() {}
