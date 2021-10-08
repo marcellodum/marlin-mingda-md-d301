@@ -79,14 +79,20 @@
     #define Z_MIN_PIN      P1_00   // PWRDET
   #endif
 #else
-  #define Z_STOP_PIN       P1_27   // Z-STOP
+  #ifndef Z_STOP_PIN
+    #define Z_STOP_PIN     P1_27   // Z-STOP
+  #endif
 #endif
 
 //
 // Z Probe (when not Z_MIN_PIN)
 //
 #ifndef Z_MIN_PROBE_PIN
-  #define Z_MIN_PROBE_PIN  P0_10
+  #if Z_STOP_PIN != P1_27
+    #define Z_MIN_PROBE_PIN P1_27
+  #else
+    #define Z_MIN_PROBE_PIN P0_10
+  #endif
 #endif
 
 //
@@ -149,11 +155,6 @@
 
 #define TEMP_1_PIN         P0_23_A0   // A2 (T2) - (69) - TEMP_1_PIN
 #define TEMP_BED_PIN       P0_25_A2   // A0 (T0) - (67) - TEMP_BED_PIN
-
-//
-// Include common SKR pins
-//
-#include "pins_BTT_SKR_common.h"
 
 //
 // Software SPI pins for TMC2130 stepper drivers
@@ -264,7 +265,10 @@
     #define LCD_PINS_D4    P1_20
 
     #define LCD_SDSS       P0_16   // (16) J3-7 & AUX-4
-    #define SD_DETECT_PIN  P1_31   // (49) (NOT 5V tolerant)
+
+    #if SD_CONNECTION_IS(LCD)
+      #define SD_DETECT_PIN P1_31  // (49) (NOT 5V tolerant)
+    #endif
 
     #if ENABLED(FYSETC_MINI_12864)
       #define DOGLCD_CS    P1_18
@@ -329,3 +333,8 @@
  *   P0_27  (57) (Open collector)
  *   P0_28  (58) (Open collector)
  */
+
+//
+// Include common SKR pins
+//
+#include "pins_BTT_SKR_common.h"

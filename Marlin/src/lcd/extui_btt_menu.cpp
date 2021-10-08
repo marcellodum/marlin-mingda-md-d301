@@ -23,8 +23,8 @@
 
 #if BOTH(BTT_FSMC_LCD, EXTENSIBLE_UI)
 
-#include "extensible_ui/ui_api.h"
-#include "extensible_ui/lib/tsc/TSC_Menu.h"
+#include "extui/ui_api.h"
+#include "extui/lib/tsc/TSC_Menu.h"
 
 // To implement a new UI, complete the functions below and
 // read or update Marlin's state using the methods in the
