@@ -22,9 +22,9 @@
 
 #include "../../inc/MarlinConfig.h"
 
-#if USE_REAL_EEPROM
+#if USE_WIRED_EEPROM
 
-#include "../shared/persistent_store_api.h"
+#include "../shared/eeprom_api.h"
 
 bool PersistentStore::access_start() {
   #if ENABLED(SPI_EEPROM)
@@ -73,5 +73,5 @@ bool PersistentStore::read_data(int &pos, uint8_t* value, size_t size, uint16_t 
 
 size_t PersistentStore::capacity() { return E2END + 1; }
 
-#endif // USE_REAL_EEPROM
+#endif // USE_WIRED_EEPROM
 #endif // __STM32F1__
