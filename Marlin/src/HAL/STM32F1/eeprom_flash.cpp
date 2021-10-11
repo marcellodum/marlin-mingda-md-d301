@@ -17,7 +17,7 @@
  * GNU General Public License for more details.
  *
  * You should have received a copy of the GNU General Public License
- * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  *
  */
 
@@ -31,8 +31,7 @@
 
 #include "../../inc/MarlinConfig.h"
 
-// This is for EEPROM emulation in flash
-#if BOTH(EEPROM_SETTINGS, FLASH_EEPROM_EMULATION)
+#if ENABLED(FLASH_EEPROM_EMULATION)
 
 #include "../shared/eeprom_api.h"
 

@@ -123,9 +123,15 @@ namespace ExtUI {
     // whether successful or not.
   }
 
-  void onMeshUpdate(const int8_t xpos, const int8_t ypos, const float zval) {
-    // This is called when any mesh points are updated
-  }
+  #if HAS_MESH
+    void onMeshUpdate(const int8_t xpos, const int8_t ypos, const float zval) {
+      // Called when any mesh points are updated
+    }
+
+    void onMeshUpdate(const int8_t xpos, const int8_t ypos, const ExtUI::probe_state_t state) {
+      // Called to indicate a special condition
+    }
+  #endif
 
   void onRecoveryChecked() {
     infoMenu.menu[++infoMenu.cur] = menuPowerFailed;
