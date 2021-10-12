@@ -1,5 +1,5 @@
 #include "../TSC_Menu.h"
-#include "../../../../../module/configuration_store.h"
+#include "../../../../../module/settings.h"
 
 //1 titl, ITEM_PER_PAGE item
 MENUITEMS probeOffsetItems = {

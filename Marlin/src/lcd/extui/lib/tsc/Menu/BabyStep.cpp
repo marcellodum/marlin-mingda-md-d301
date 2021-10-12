@@ -1,7 +1,7 @@
 #include "BabyStep.h"
 #include "../TSC_Menu.h"
 #include "../../../../../feature/babystep.h"
-#include "../../../../../module/configuration_store.h"
+#include "../../../../../module/settings.h"
 
 //1 title, ITEM_PER_PAGE items(icon+label) 
 MENUITEMS babyStepItems = {
