@@ -41,7 +41,7 @@ static uint8_t item_percentage_i = 0;
 uint16_t getGercentageValue(uint8_t flowOrSpeed)
 {
   if (item_percentage_i == 0) return ExtUI::getFeedrate_percent();
-  else return ExtUI::getFlowPercentage(ExtUI::getActiveTool());
+  else return ExtUI::getFlow_percent(ExtUI::getActiveTool());
 }
 
 void setGercentageValue(uint8_t flowOrSpeed, uint16_t value)

@@ -91,7 +91,7 @@ default:
 // If the gcode queue is full, reminde in title bar.
 bool storeCmd(const char *cmd)
 {  
-  if (queue.length >= BUFSIZE) {  
+  if (queue.ring_buffer.full()) {  
     reminderMessage(LABEL_BUSY, STATUS_BUSY);
     return false;
   }
@@ -103,7 +103,7 @@ bool storeCmd(const char *cmd)
 // If the gcode queue is full, reminde in title bar,  waiting for available queue and store the command.
 void mustStoreCmd(const char *cmd)
 {  
-  if (queue.length >= BUFSIZE) reminderMessage(LABEL_BUSY, STATUS_BUSY);
+  if (queue.ring_buffer.full()) reminderMessage(LABEL_BUSY, STATUS_BUSY);
   queue.enqueue_one_now(cmd);
 }
 

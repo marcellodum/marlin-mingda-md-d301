@@ -115,7 +115,7 @@ void loopReminderClear(void)
       return;
     
     case STATUS_BUSY:
-      if(queue.length >= BUFSIZE)
+      if(queue.ring_buffer.full())
         return;
       break;
       

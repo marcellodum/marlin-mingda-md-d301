@@ -64,8 +64,8 @@
  * @details Only configures SS pin since libmaple creates and initialize the SPI object
  */
 void spiBegin() {
-  #if PIN_EXISTS(SS)
-    OUT_WRITE(SS_PIN, HIGH);
+  #if PIN_EXISTS(SD_SS)
+    OUT_WRITE(SD_SS_PIN, HIGH);
   #endif
 }
 
@@ -113,9 +113,9 @@ void spiInit(uint8_t spiRate) {
  * @details
  */
 uint8_t spiRec() {
-  WRITE(SS_PIN, 0);
+  WRITE(SD_SS_PIN, 0);
   uint8_t returnByte = SPI.transfer(0xff);
-  WRITE(SS_PIN, 1);
+  WRITE(SD_SS_PIN, 1);
   return returnByte;
 }
 
@@ -128,10 +128,10 @@ uint8_t spiRec() {
  *
  * @details Uses DMA
  */
-void spiRead(uint8_t* buf, uint16_t nbyte) {
-  WRITE(SS_PIN, 0);
+void spiRead(uint8_t *buf, uint16_t nbyte) {
+  WRITE(SD_SS_PIN, 0);
   SPI.dmaTransfer(0, const_cast<uint8_t*>(buf), nbyte);
-  WRITE(SS_PIN, 1);
+  WRITE(SD_SS_PIN, 1);
 }
 
 /**
@@ -142,9 +142,9 @@ void spiRead(uint8_t* buf, uint16_t nbyte) {
  * @details
  */
 void spiSend(uint8_t b) {
-  WRITE(SS_PIN, 0);
+  WRITE(SD_SS_PIN, 0);
   SPI.send(b);
-  WRITE(SS_PIN, 1);
+  WRITE(SD_SS_PIN, 1);
 }
 
 /**
@@ -155,11 +155,11 @@ void spiSend(uint8_t b) {
  *
  * @details Use DMA
  */
-void spiSendBlock(uint8_t token, const uint8_t* buf) {
-  WRITE(SS_PIN, 0);
+void spiSendBlock(uint8_t token, const uint8_t *buf) {
+  WRITE(SD_SS_PIN, 0);
   SPI.send(token);
   SPI.dmaSend(const_cast<uint8_t*>(buf), 512);
-  WRITE(SS_PIN, 1);
+  WRITE(SD_SS_PIN, 1);
 }
 
 #if ENABLED(SPI_EEPROM)
@@ -171,7 +171,7 @@ uint8_t spiRec(uint32_t chan) { return SPI.transfer(ff); }
 void spiSend(uint32_t chan, byte b) { SPI.send(b); }
 
 // Write buffer to specified SPI channel
-void spiSend(uint32_t chan, const uint8_t* buf, size_t n) {
+void spiSend(uint32_t chan, const uint8_t *buf, size_t n) {
   for (size_t p = 0; p < n; p++) spiSend(chan, buf[p]);
 }
 

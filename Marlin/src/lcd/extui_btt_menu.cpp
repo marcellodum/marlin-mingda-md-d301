@@ -148,6 +148,15 @@ namespace ExtUI {
       // Called for temperature PID tuning result
     }
   #endif  
+
+  void onPostprocessSettings() {
+    // Called after loading or resetting stored settings
+  }
+  void onHomingStart() {}
+  void onHomingComplete() {}
+  void onPrintFinished() {}
+  void onSteppersDisabled() {}
+  void onSteppersEnabled()  {}
 }
 
 #endif // EXTUI_EXAMPLE && EXTENSIBLE_UI
