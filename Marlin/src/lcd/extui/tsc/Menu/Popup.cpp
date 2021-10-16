@@ -1,6 +1,7 @@
 #include "Popup.h"
 #include "../TSC_Menu.h"
 
+#if ENABLED(MINGDA_TFT)
 
 #define BUTTON_NUM 1
 
@@ -88,3 +89,5 @@ void popupReminder(uint8_t* info, uint8_t* context)
     infoMenu.menu[++infoMenu.cur] = menuPopup;
   }
 }
+
+#endif

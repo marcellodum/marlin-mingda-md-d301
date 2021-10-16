@@ -3,6 +3,8 @@
 #include "../../../../feature/babystep.h"
 #include "../../../../module/settings.h"
 
+#if ENABLED(MINGDA_TFT)
+
 //1 title, ITEM_PER_PAGE items(icon+label) 
 MENUITEMS babyStepItems = {
 //title
@@ -114,3 +116,5 @@ void menuBabyStep()
   showBabyStep();
   menuSetFrontCallBack(menuCallBackBabyStep);
 }
+
+#endif

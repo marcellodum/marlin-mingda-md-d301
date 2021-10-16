@@ -2674,6 +2674,11 @@
 #endif
 
 //
+// 480x320 Miingda 2.8" FSMC TFT Resistive Touch Screen
+//
+#define MINGDA_TFT
+
+//
 // Third-party or vendor-customized controller interfaces.
 // Sources should be installed in 'src/lcd/extui'.
 //

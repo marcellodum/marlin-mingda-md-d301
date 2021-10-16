@@ -21,7 +21,7 @@
 
 #include "../inc/MarlinConfigPre.h"
 
-#if BOTH(BTT_FSMC_LCD, EXTENSIBLE_UI)
+#if BOTH(MINGDA_TFT, EXTENSIBLE_UI)
 
 #include "extui/ui_api.h"
 #include "extui/tsc/TSC_Menu.h"

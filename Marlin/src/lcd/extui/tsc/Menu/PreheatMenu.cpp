@@ -1,6 +1,7 @@
 ﻿#include "PreheatMenu.h"
 #include "../TSC_Menu.h"
 
+#if ENABLED(MINGDA_TFT)
 
 MENUITEMS preheatItems = {
 // title
@@ -84,3 +85,5 @@ void menuPreheat(void)
   menuDrawPage(&preheatItems);
   menuSetFrontCallBack(menuCallBackPreHeat);
 }
+
+#endif

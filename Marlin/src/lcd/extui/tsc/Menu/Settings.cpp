@@ -1,6 +1,8 @@
 #include "Settings.h"
 #include "../TSC_Menu.h"
 
+#if ENABLED(MINGDA_TFT)
+
 SETTINGS infoSettings, // Settings para
          lastSettings; // Last Settings para
 extern uint32_t TSC_Para[7]; 
@@ -167,3 +169,5 @@ void menuSettings(void)
   menuDrawPage(&settingsItems);
   menuSetFrontCallBack(menuCallBackSettings);
 }
+
+#endif

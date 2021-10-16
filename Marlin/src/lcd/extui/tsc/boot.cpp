@@ -2,6 +2,8 @@
 #include "boot.h"
 #include "../../../core/macros.h"
 
+#if ENABLED(MINGDA_TFT)
+
 const GUI_RECT iconUpdateRect = {(LCD_WIDTH_PIXEL - ICON_WIDTH)/2,              (LCD_HEIGHT_PIXEL - ICON_HEIGHT)/2, 
                                  (LCD_WIDTH_PIXEL - ICON_WIDTH)/2 + ICON_WIDTH, (LCD_HEIGHT_PIXEL - ICON_HEIGHT)/2 + ICON_HEIGHT};
 const GUI_RECT labelUpdateRect = {0,              (LCD_HEIGHT_PIXEL - ICON_HEIGHT)/2 + ICON_HEIGHT, 
@@ -255,3 +257,5 @@ void TSCBoot::scanUpdates(void) {
  // if (result) f_rename(ROOT_DIR, ROOT_DIR".CUR");
  // scanResetDir();
 }
+
+#endif

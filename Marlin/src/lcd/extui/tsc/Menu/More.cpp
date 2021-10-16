@@ -1,5 +1,7 @@
 #include "../TSC_Menu.h"
 
+#if ENABLED(MINGDA_TFT)
+
 void menuCallBackIsPause(void)
 {
   uint16_t key_num = KEY_GetValue(2, doubleBtnRect);
@@ -77,3 +79,5 @@ void menuMore()
   menuDrawPage(&moreItems);
   menuSetFrontCallBack(menuCallBackMore);
 }
+
+#endif

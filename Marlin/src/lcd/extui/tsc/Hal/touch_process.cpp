@@ -5,6 +5,8 @@
 #include "../../ui_api.h"
 #include "../Menu/menu.h"
 
+#if ENABLED(MINGDA_TFT)
+
 #define XL1 LCD_X[0]
 #define XL2 LCD_X[1]
 #define XL3 LCD_X[2]
@@ -321,3 +323,5 @@ typedef enum
 //  }
 //  return key_return;
 //}
+
+#endif

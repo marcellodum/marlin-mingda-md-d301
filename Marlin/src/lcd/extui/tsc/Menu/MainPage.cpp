@@ -1,5 +1,7 @@
 #include "../TSC_Menu.h"
 
+#if ENABLED(MINGDA_TFT)
+
 //1 title, ITEM_PER_PAGE items(icon+label) 
 const MENUITEMS mainPageItems = {
 // title
@@ -114,3 +116,5 @@ void menuMain(void)
   menuDrawPage(&mainPageItems);
   menuSetFrontCallBack(menuCallBackMainPage);
 }
+
+#endif

@@ -1,5 +1,7 @@
 #include "../TSC_Menu.h"
 
+#if ENABLED(MINGDA_TFT)
+
 void menuCallUsrConfirm(void)
 {
   uint16_t key_num = KEY_GetValue(1, &singleBtnRect);
@@ -19,3 +21,5 @@ void menuUsrConfirm()
 
   menuSetFrontCallBack(menuCallUsrConfirm);
 }
+
+#endif

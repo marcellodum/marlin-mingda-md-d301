@@ -1,5 +1,7 @@
 #include "../TSC_Menu.h"
 
+#if ENABLED(MINGDA_TFT)
+
 //1 title, ITEM_PER_PAGE items (icon + label) 
 MENUITEMS StatusItems = {
 // title
@@ -293,3 +295,5 @@ void menuStatus()
 
   menuSetFrontCallBack(menuCallStatus);
 }
+
+#endif

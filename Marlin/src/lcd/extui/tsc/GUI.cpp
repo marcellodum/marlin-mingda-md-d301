@@ -1,7 +1,10 @@
+#include "../../../inc/MarlinConfigPre.h"
 #include "GUI.h"
 #include "LCD_Init.h"
 #include "Hal/stm32f1_fsmc.h"
 #include "Hal/w25qxx.h"
+
+#if ENABLED(MINGDA_TFT)
 
 uint16_t foreGroundColor = FK_COLOR;
 uint16_t backGroundColor = BK_COLOR;
@@ -956,3 +959,5 @@ void GUI_RestoreColorDefault(void){
   GUI_SetTextMode(GUI_TEXTMODE_NORMAL);
   GUI_SetNumMode(GUI_NUMMODE_SPACE);
 }
+
+#endif

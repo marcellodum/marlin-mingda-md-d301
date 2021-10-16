@@ -1,6 +1,7 @@
 #include "menu.h"
 #include "../TSC_Menu.h"
 
+#if ENABLED(MINGDA_TFT)
 
 // exhibitRect is 2 ICON Space in the Upper Row and 2 Center Coloum. 
 const GUI_RECT exhibitRect = {
@@ -327,3 +328,5 @@ void loopFrontEnd(void)
 
   loopCheckSettings();
 }
+
+#endif

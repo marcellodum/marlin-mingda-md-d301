@@ -1,6 +1,8 @@
 #include "../../../../inc/MarlinConfig.h"
 #include "w25qxx.h"
 
+#if ENABLED(MINGDA_TFT)
+
 /*************************** W25Qxx SPI ģʽ�ײ���ֲ�Ľӿ� ***************************/
 //#define W25Qxx_SPI     _SPI3
 //#define W25Qxx_SPEED   0
@@ -223,4 +225,4 @@ void W25Qxx_EraseBulk(void)
   W25Qxx_WaitForWriteEnd();
 }
 
-
+#endif

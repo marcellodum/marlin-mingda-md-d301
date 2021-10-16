@@ -6,6 +6,8 @@
 #include "GUI.h"
 #include "Menu/Settings.h"
 
+#if ENABLED(MINGDA_TFT)
+
 // DZ301_TFT35
 // TFT35_V2_0
 #define DZ301_TFT35
@@ -476,3 +478,5 @@ void LCD_Init(void)
   LCD_LED_On();
 #endif
 }
+
+#endif

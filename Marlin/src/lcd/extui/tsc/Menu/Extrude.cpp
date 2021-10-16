@@ -1,6 +1,8 @@
 #include "../TSC_Menu.h"
 #include "Extrude.h"
 
+#if ENABLED(MINGDA_TFT)
+
 //1title, ITEM_PER_PAGE items
 MENUITEMS extrudeItems = {
 // title
@@ -111,3 +113,5 @@ void menuExtrude()
   showExtrudeCoordinate();
   menuSetFrontCallBack(menuCallBackExtrude);
 }
+
+#endif

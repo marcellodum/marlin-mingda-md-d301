@@ -1,5 +1,8 @@
+#include "../../../inc/MarlinConfigPre.h"
 #include "Hal/STM32_Flash.h"
 #include "Menu/Settings.h"
+
+#if ENABLED(MINGDA_TFT)
 
 #define PARA_SIZE 256  //bytes
 #define TSC_SIGN  0x20200707 // DO NOT MODIFY
@@ -95,3 +98,5 @@ void storePara(void)
   
   STM32_FlashWrite(data, PARA_SIZE);
 }
+
+#endif

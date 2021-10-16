@@ -1,6 +1,7 @@
 #include "../TSC_Menu.h"
 #include "FeatureSettings.h"
 
+#if ENABLED(MINGDA_TFT)
 
 MENUITEMS featureSettingsItems = {
 // title
@@ -96,3 +97,5 @@ void menuFeatureSettings(void)
   menuDrawPage(&featureSettingsItems);
   menuSetFrontCallBack(menuCallBackFeatureSettings);
 }
+
+#endif

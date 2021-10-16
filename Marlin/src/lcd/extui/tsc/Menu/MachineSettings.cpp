@@ -1,5 +1,6 @@
 #include "../TSC_Menu.h"
 
+#if ENABLED(MINGDA_TFT)
 
 MENUITEMS RGBItems = {
 // title
@@ -112,3 +113,5 @@ void menuMachineSettings(void)
   menuDrawPage(&machineSettingsItems);
   menuSetFrontCallBack(menuCallBackMachineSettings);
 }
+
+#endif

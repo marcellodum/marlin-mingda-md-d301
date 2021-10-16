@@ -1,5 +1,7 @@
 #include "../TSC_Menu.h"
 
+#if ENABLED(MINGDA_TFT)
+
 //1 title, ITEM_PER_PAGE items
 MENUITEMS percentageItems = {
 // title
@@ -109,3 +111,5 @@ void menuSpeed(void)
   showPercentage();
   menuSetFrontCallBack(menuCallBackSpeed);
 }
+
+#endif

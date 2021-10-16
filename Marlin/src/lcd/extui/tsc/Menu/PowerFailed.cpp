@@ -1,6 +1,8 @@
 #include "../TSC_Menu.h"
 #include "../../../../feature/powerloss.h"
 
+#if ENABLED(MINGDA_TFT)
+
 void menuCallBackPowerFailed(void)
 {
   uint16_t key_num = KEY_GetValue(2, doubleBtnRect);
@@ -30,3 +32,5 @@ void menuPowerFailed()
     
   menuSetFrontCallBack(menuCallBackPowerFailed);
 }
+
+#endif

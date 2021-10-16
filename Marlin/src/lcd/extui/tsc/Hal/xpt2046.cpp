@@ -1,6 +1,8 @@
 #include "../../../../inc/MarlinConfig.h"
 #include "xpt2046.h"
 
+#if ENABLED(MINGDA_TFT)
+
 #define TOUCH_CS_PIN     PB6
 #define TOUCH_SCK_PIN    PB3
 #define TOUCH_MOSI_PIN   PB5
@@ -101,3 +103,4 @@ uint16_t XPT2046_Repeated_Compare_AD(uint8_t CMD)
   else return 0;	  
 } 
 
+#endif

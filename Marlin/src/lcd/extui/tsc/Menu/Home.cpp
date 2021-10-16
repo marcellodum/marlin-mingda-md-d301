@@ -1,5 +1,7 @@
 #include "../TSC_Menu.h"
 
+#if ENABLED(MINGDA_TFT)
+
 //1title, ITEM_PER_PAGE item
 const MENUITEMS homeItems = {
 // title
@@ -36,3 +38,5 @@ void menuHome()
   menuDrawPage(&homeItems);
   menuSetFrontCallBack(menuCallBackHome);
 }
+
+#endif

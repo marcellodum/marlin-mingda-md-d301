@@ -2,6 +2,8 @@
 #include <EEPROM.h>
 #include <flash_stm32.h>
 
+#if ENABLED(MINGDA_TFT)
+
 //#define SIGN_ADDRESS (0x08080000 - 0x800 - 0x800)
 #define SIGN_ADDRESS (EEPROM_START_ADDRESS - 0x800) //reserve the last page (2KB) to save user parameters
 
@@ -26,3 +28,5 @@ void STM32_FlashWrite(uint8_t *data, uint32_t len)
   }
   FLASH_Lock();
 }
+
+#endif

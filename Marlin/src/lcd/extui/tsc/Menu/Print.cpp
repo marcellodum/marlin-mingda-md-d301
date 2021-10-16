@@ -1,6 +1,8 @@
 #include "Print.h"
 #include "../TSC_Menu.h"
 
+#if ENABLED(MINGDA_TFT)
+
 static ExtUI::FileList filelist;
 
 
@@ -257,3 +259,5 @@ selectEnd:
   powerFailedSetDriverSource(getCurFileSource());
 }
 */
+
+#endif

@@ -1,5 +1,7 @@
 #include "../TSC_Menu.h"
 
+#if ENABLED(MINGDA_TFT)
+
 #define LEVELING_POINT_MOVE_Z      10.0f  // Z-axis position when nozzle move to next point
 #define LEVELING_POINT_HEIGHT_Z		0.2f  // Z-axis position when leveling
 #define LEVELING_POINT_Z_FEEDRATE    600  // (mm/min) Z axis move feedrate
@@ -143,5 +145,7 @@ void menuManualLeveling()
   menuDrawPage(&manualLevelingItems);
   menuSetFrontCallBack(menuCallBackManualLeveling);
 }
+
+#endif
 
 #endif

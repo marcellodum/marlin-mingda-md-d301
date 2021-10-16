@@ -1,5 +1,7 @@
 #include "../TSC_Menu.h"
 
+#if ENABLED(MINGDA_TFT)
+
 MENUITEMS screenSettingsItems = {
 // title
 LABEL_SCREEN_SETTINGS,
@@ -84,3 +86,4 @@ void menuScreenSettings(void)
   menuSetFrontCallBack(menuCallBackScreenSettings);
 }
 
+#endif

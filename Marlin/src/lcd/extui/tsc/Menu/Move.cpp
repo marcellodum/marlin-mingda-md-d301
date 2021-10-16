@@ -1,5 +1,7 @@
 #include "../TSC_Menu.h"
 
+#if ENABLED(MINGDA_TFT)
+
 MENUITEMS moveItems = {
 //title
 LABEL_MOVE,
@@ -92,3 +94,5 @@ void menuMove()
   redrawPosition();
   menuSetFrontCallBack(menuCallBackMove);
 }
+
+#endif

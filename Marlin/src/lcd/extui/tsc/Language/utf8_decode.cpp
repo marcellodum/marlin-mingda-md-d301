@@ -1,7 +1,9 @@
+#include "../../../../inc/MarlinConfigPre.h"
 #include "utf8_decode.h"
 #include "../../../../core/macros.h"
 #include "../LCD_Init.h"
 
+#if ENABLED(MINGDA_TFT)
 
 static FONT_BITMAP font[] = {
   { // Visible ASCII code, from ' ' to '~'
@@ -128,3 +130,5 @@ uint16_t GUI_StrPixelWidth(const uint8_t *const str)
   }
   return len;
 }
+
+#endif

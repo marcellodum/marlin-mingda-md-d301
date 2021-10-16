@@ -1,6 +1,8 @@
 #include "UBL.h"
 #include "../TSC_Menu.h"
 
+#if ENABLED(MINGDA_TFT)
+
 static uint8_t ublSlot;
 static bool ublIsSaving = true;
 static bool ublSlotSaved = false;
@@ -177,3 +179,5 @@ void menuUBLSavePopup(void)
   popupDrawPage(bottomDoubleBtn, textSelect(LABEL_ABL_SETTINGS_UBL_SAVE), textSelect(LABEL_ABL_SLOT_EEPROM), textSelect(LABEL_CONFIRM), textSelect(LABEL_CANNEL));
   menuSetFrontCallBack(menuCallBackDialogUBLSaveLoad);
 }
+
+#endif

@@ -1,5 +1,7 @@
 #include "../TSC_Menu.h"
 
+#if ENABLED(MINGDA_TFT)
+
 //1title, ITEM_PER_PAGE item(icon + label) 
 MENUITEMS printingItems = {
 //  title
@@ -355,3 +357,5 @@ void menuShutDown(void)
     ExtUI::setTargetFan_percent(100, i);
   menuSetFrontCallBack(menuCallBackShutDown);
 }
+
+#endif

@@ -1,6 +1,8 @@
 #include "../TSC_Menu.h"
 #include "../../../../module/settings.h"
 
+#if ENABLED(MINGDA_TFT)
+
 //1 titl, ITEM_PER_PAGE item
 MENUITEMS probeOffsetItems = {
 // title
@@ -117,3 +119,4 @@ void menuProbeOffset()
   menuSetFrontCallBack(menuCallBackProbeOffset);
 }
 
+#endif

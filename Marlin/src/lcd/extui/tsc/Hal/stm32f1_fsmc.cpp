@@ -1,6 +1,6 @@
 #include "../../../../inc/MarlinConfig.h"
 
-#if defined(BTT_FSMC_LCD) // FSMC on 100/144 pins SoCs
+#if defined(MINGDA_TFT) // FSMC on 100/144 pins SoCs
 
 #include "stm32f1_fsmc.h"
 #include <libmaple/fsmc.h>
@@ -209,4 +209,4 @@ void LCD_WaitSequence_Async() {
   dma_disable(FSMC_DMA_DEV, FSMC_DMA_CHANNEL);
 }
 
-#endif // BTT_FSMC_LCD
+#endif // MINGDA_TFT

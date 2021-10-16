@@ -1,3 +1,4 @@
+#include "../../../../inc/MarlinConfigPre.h"
 #include "../../../../core/macros.h"
 #include "../Menu/Settings.h"
 #include "Language.h"
@@ -15,6 +16,8 @@
 #include "language_pl.h"
 #include "language_sk.h"
 #include "language_kr.h"
+
+#if ENABLED(MINGDA_TFT)
 
 #ifndef CUSTOM_0_LABEL
   #define CUSTOM_0_LABEL "Custom0"
@@ -2297,3 +2300,5 @@ uint8_t *textSelect(uint8_t sel)
    // default:        return 0;
 // }
 }
+
+#endif

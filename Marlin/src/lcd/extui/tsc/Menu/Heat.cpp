@@ -1,6 +1,8 @@
 #include "Heat.h"
 #include "../TSC_Menu.h"
 
+#if ENABLED(MINGDA_TFT)
+
 #define ZREO_COLOR LIME
 
 //1 title, ITEM_PER_PAGE items (icon + label) 
@@ -161,3 +163,5 @@ void menuHeat(void)
   showTemperature();
   menuSetFrontCallBack(menuCallBackHeat);
 }
+
+#endif

@@ -1,6 +1,8 @@
 #include "../../../../inc/MarlinConfig.h"
 #include "sw_spi.h"
 
+#if ENABLED(MINGDA_TFT)
+
 void SW_SPI_Config(_SW_SPI *sw_spi, _SPI_MODE mode, uint8_t dataSize,
 uint16_t  cs, 
 uint16_t  sck, 
@@ -84,3 +86,5 @@ void SW_SPI_CS_Set(_SW_SPI *sw_spi, uint8_t level)
 {
   WRITE(sw_spi->cs, level);
 }
+
+#endif

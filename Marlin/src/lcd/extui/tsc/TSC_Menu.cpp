@@ -24,7 +24,7 @@
 
 #include "../../../inc/MarlinConfigPre.h"
 
-#if ENABLED(BTT_FSMC_LCD)
+#if ENABLED(MINGDA_TFT)
 
 #include "../ui_api.h"
 
