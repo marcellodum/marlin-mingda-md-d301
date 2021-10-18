@@ -171,29 +171,11 @@
  * Setting an 'LCD_RESET_PIN' may cause a flicker when entering the LCD menu
  * because Marlin uses the reset as a failsafe to revive a glitchy LCD.
  */
-#define LCD_BACKLIGHT_PIN  PG10
-#define FSMC_CS_PIN        PD7   // FSMC_NE1
-#define FSMC_RS_PIN        PE2   // A23 Register. Only one address needed
 
-#define LCD_USE_DMA_FSMC   // Use DMA transfers to send data to the TFT
-#define FSMC_DMA_DEV       DMA1
-#define FSMC_DMA_CHANNEL   DMA_CH4
+
 
 #define DOGLCD_MOSI        -1  // Prevent auto-define by Conditionals_post.h
 #define DOGLCD_SCK         -1
-
-
-#if ENABLED(TOUCH_BUTTONS)
-  #define TOUCH_CS_PIN     PB6
-  #define TOUCH_SCK_PIN    PB3
-  #define TOUCH_MOSI_PIN   PB5
-  #define TOUCH_MISO_PIN   PB4 
-  #define TOUCH_INT_PIN    PB7 // PenIRQ coming from XPT2046
-#endif
-
-
-
-
 
 //
 // SD Support
@@ -206,3 +188,34 @@
 
 #define ON_BOARD_SPI_DEVICE 1    // SPI1
 #define ONBOARD_SD_CS_PIN  PA4   // Chip select for "System" SD card
+
+//
+// TFT with FSMC interface
+//
+#if HAS_FSMC_TFT
+  //#define TFT_RESET_PIN                     PC6   // FSMC_RST
+  //#define TFT_BACKLIGHT_PIN                 PD13
+
+  #define DOGLCD_MOSI                       -1    // Prevent auto-define by Conditionals_post.h
+  #define DOGLCD_SCK                        -1
+
+  #define TOUCH_CS_PIN                      PB6   // SPI2_NSS
+  #define TOUCH_SCK_PIN                     PB3  // SPI2_SCK
+  #define TOUCH_MOSI_PIN                    PB5  // SPI2_MOSI
+  #define TOUCH_MISO_PIN                    PB4  // SPI2_MISO
+  #define TOUCH_INT_PIN                     PB7 // PenIRQ coming from XPT2046
+
+  #define LCD_USE_DMA_FSMC                        // Use DMA transfers to send data to the TFT
+  #define LCD_BACKLIGHT_PIN  PG10
+  #define TFT_BACKLIGHT_PIN                 LCD_BACKLIGHT_PIN
+  #define FSMC_CS_PIN        PD7   // FSMC_NE1
+  #define FSMC_RS_PIN        PE2   // A23 Register. Only one address needed
+  #define FSMC_DMA_DEV       DMA1
+  #define FSMC_DMA_CHANNEL   DMA_CH4
+
+  #define TFT_CS_PIN                 FSMC_CS_PIN
+  #define TFT_RS_PIN                 FSMC_RS_PIN
+  
+  // Buffer for Color UI
+  #define TFT_BUFFER_SIZE                   3200
+#endif
