@@ -29,7 +29,7 @@
 #define Y_BED_SIZE 320
 #define Z_MAX_POS  400
 
-//#define D301_AUTO_LEVELING
+#define D301_AUTO_LEVELING
 
 #ifdef D301_AUTO_LEVELING
   #define Z_MIN_PROBE_USES_Z_MIN_ENDSTOP_PIN
@@ -883,7 +883,7 @@
 // Mechanical endstop with COM to ground and NC to Signal uses "false" here (most common setup).
 #define X_MIN_ENDSTOP_INVERTING true // Set to true to invert the logic of the endstop.
 #define Y_MIN_ENDSTOP_INVERTING true // Set to true to invert the logic of the endstop.
-#define Z_MIN_ENDSTOP_INVERTING true // Set to true to invert the logic of the endstop.
+#define Z_MIN_ENDSTOP_INVERTING false // Set to true to invert the logic of the endstop.
 #define I_MIN_ENDSTOP_INVERTING false // Set to true to invert the logic of the endstop.
 #define J_MIN_ENDSTOP_INVERTING false // Set to true to invert the logic of the endstop.
 #define K_MIN_ENDSTOP_INVERTING false // Set to true to invert the logic of the endstop.
