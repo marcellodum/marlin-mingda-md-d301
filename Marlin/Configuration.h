@@ -35,7 +35,7 @@
   #define Z_MIN_PROBE_USES_Z_MIN_ENDSTOP_PIN
   #define BLTOUCH
   #define Z_SAFE_HOMING
-  #define AUTO_BED_LEVELING_BILINEAR
+  #define AUTO_BED_LEVELING_UBL
 #endif
 
 /**
@@ -2676,13 +2676,13 @@
 //
 // 480x320 Miingda 2.8" FSMC TFT Resistive Touch Screen
 //
-//#define MINGDA_TFT
+#define MINGDA_TFT
 
 //
 // Third-party or vendor-customized controller interfaces.
 // Sources should be installed in 'src/lcd/extui'.
 //
-//#define EXTENSIBLE_UI
+#define EXTENSIBLE_UI
 
 #if ENABLED(EXTENSIBLE_UI)
   //#define EXTUI_LOCAL_BEEPER // Enables use of local Beeper pin with external display
@@ -2771,19 +2771,19 @@
 //
 // Generic TFT with detailed options
 //
-#define TFT_GENERIC
+//#define TFT_GENERIC
 #if ENABLED(TFT_GENERIC)
   // :[ 'AUTO', 'ST7735', 'ST7789', 'ST7796', 'R61505', 'ILI9328', 'ILI9341', 'ILI9488' ]
-  #define TFT_DRIVER ILI9488
+  #define TFT_DRIVER AUTO
 
   // Interface. Enable one of the following options:
-  #define TFT_INTERFACE_FSMC
+  //#define TFT_INTERFACE_FSMC
   //#define TFT_INTERFACE_SPI
 
   // TFT Resolution. Enable one of the following options:
   //#define TFT_RES_320x240
   //#define TFT_RES_480x272
-  #define TFT_RES_480x320
+  //#define TFT_RES_480x320
   //#define TFT_RES_1024x600
 #endif
 
@@ -2798,7 +2798,7 @@
  *   root of your SD card, together with the compiled firmware.
  */
 //#define TFT_CLASSIC_UI
-#define TFT_COLOR_UI
+//#define TFT_COLOR_UI
 //#define TFT_LVGL_UI
 
 #if ENABLED(TFT_LVGL_UI)
@@ -2843,7 +2843,7 @@
 //
 // Touch Screen Settings
 //
-#define TOUCH_SCREEN
+//#define TOUCH_SCREEN
 #if ENABLED(TOUCH_SCREEN)
   #define BUTTON_DELAY_EDIT  50 // (ms) Button repeat delay for edit screens
   #define BUTTON_DELAY_MENU 250 // (ms) Button repeat delay for menus
@@ -2856,7 +2856,7 @@
   //#define TOUCH_CALIBRATION_Y -8981
   //#define TOUCH_OFFSET_X        -43
   //#define TOUCH_OFFSET_Y        257
-  #define TOUCH_ORIENTATION TOUCH_LANDSCAPE
+  //#define TOUCH_ORIENTATION TOUCH_LANDSCAPE
 
   #if BOTH(TOUCH_SCREEN_CALIBRATION, EEPROM_SETTINGS)
     #define TOUCH_CALIBRATION_AUTO_SAVE // Auto save successful calibration values to EEPROM
