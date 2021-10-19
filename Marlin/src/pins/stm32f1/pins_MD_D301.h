@@ -192,9 +192,8 @@
 //
 // TFT with FSMC interface
 //
-#if HAS_FSMC_TFT
+//#if HAS_FSMC_TFT
   //#define TFT_RESET_PIN                     PC6   // FSMC_RST
-  //#define TFT_BACKLIGHT_PIN                 PD13
 
   #define DOGLCD_MOSI                       -1    // Prevent auto-define by Conditionals_post.h
   #define DOGLCD_SCK                        -1
@@ -218,4 +217,4 @@
   
   // Buffer for Color UI
   #define TFT_BUFFER_SIZE                   3200
-#endif
+//#endif
