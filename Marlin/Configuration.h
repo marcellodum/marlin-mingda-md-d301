@@ -998,9 +998,9 @@
  *                                      X, Y, Z [, I [, J [, K]]], E0 [, E1[, E2...]]
  */
 #if ENABLED(MINGDA_D2)
-  #define DEFAULT_AXIS_STEPS_PER_UNIT   { 80, 80, 800, 400 }
-#else
   #define DEFAULT_AXIS_STEPS_PER_UNIT   { 80, 80, 800, 100 }
+#else
+  #define DEFAULT_AXIS_STEPS_PER_UNIT   { 80, 80, 800, 400 }
 #endif
 
 /**
