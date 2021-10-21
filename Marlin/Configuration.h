@@ -21,13 +21,27 @@
  */
 #pragma once
 
-// 230*230*260
-// 320*320*400
-// 420*420*400
-// The size of the print bed
-#define X_BED_SIZE 320
-#define Y_BED_SIZE 320
-#define Z_MAX_POS  400
+//#define MINGDA_ROCK_3     // 230*230*260
+#define MINGDA_ROCK_3_PRO  // 320*320*400
+//#define MINGDA_D2         // 230*230*260
+//#define MINGDA_D3_PRO     // 320*320*400
+//#define MINGDA_D4_PRO     // 420*420*400
+
+#if EITHER(MINGDA_ROCK_3, MINGDA_D2)
+  #define X_BED_SIZE 230
+  #define Y_BED_SIZE 230
+  #define Z_MAX_POS  260
+#elif EITHER(MINGDA_ROCK_3_PRO, MINGDA_D3_PRO)
+  #define X_BED_SIZE 320
+  #define Y_BED_SIZE 320
+  #define Z_MAX_POS  400
+#elif ENABLED(MINGDA_D4_PRO)
+  #define X_BED_SIZE 420
+  #define Y_BED_SIZE 420
+  #define Z_MAX_POS  400
+#else
+  #error "Select the printer model."
+#endif
 
 //#define D301_AUTO_LEVELING
 
@@ -36,6 +50,7 @@
   #define BLTOUCH
   #define Z_SAFE_HOMING
   #define AUTO_BED_LEVELING_UBL
+  //#define AUTO_BED_LEVELING_BILINEAR
 #endif
 
 /**
@@ -883,7 +898,11 @@
 // Mechanical endstop with COM to ground and NC to Signal uses "false" here (most common setup).
 #define X_MIN_ENDSTOP_INVERTING true // Set to true to invert the logic of the endstop.
 #define Y_MIN_ENDSTOP_INVERTING true // Set to true to invert the logic of the endstop.
-#define Z_MIN_ENDSTOP_INVERTING true // Set to true to invert the logic of the endstop.
+#if ENABLED(BLTOUCH)
+  #define Z_MIN_ENDSTOP_INVERTING false // Set to true to invert the logic of the endstop.
+#else
+  #define Z_MIN_ENDSTOP_INVERTING true // Set to true to invert the logic of the endstop.
+#endif
 #define I_MIN_ENDSTOP_INVERTING false // Set to true to invert the logic of the endstop.
 #define J_MIN_ENDSTOP_INVERTING false // Set to true to invert the logic of the endstop.
 #define K_MIN_ENDSTOP_INVERTING false // Set to true to invert the logic of the endstop.
@@ -1648,7 +1667,7 @@
 #if EITHER(AUTO_BED_LEVELING_LINEAR, AUTO_BED_LEVELING_BILINEAR)
 
   // Set the number of grid points per dimension.
-  #define GRID_MAX_POINTS_X 3
+  #define GRID_MAX_POINTS_X 5
   #define GRID_MAX_POINTS_Y GRID_MAX_POINTS_X
 
   //#define UBL_HILBERT_CURVE       // Use Hilbert distribution for less travel when probing multiple points
