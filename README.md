@@ -4,7 +4,7 @@ From version 1.0 forward, I'll be preparing firmware binaries only using the Mar
 # Installation (Marlin LVGL UI)
 Uncompress assets.zip and the desired firmware zip file and copy them on an empty SD card:
 
-![](https://github.com/marcellodum/marlin-mingda-md-d301/blob/master/docs/images/sd_card_content.png)
+![](https://github.com/marcellodum/marlin-mingda-md-d301/blob/main/docs/images/sd_card_content.png?raw=true)
 
 Turn off the printer, insert the SD card, and turn it back on. The firmware and icons update process should start.
 
@@ -13,36 +13,36 @@ The following process has been tested on Cura version 4.11.0. An Ultimaker accou
 
 Open https://marketplace.ultimaker.com/app/cura/plugins/Jeredian/MKSWifiPlugin and click the "Add to Cura" button:
 
-![](https://github.com/marcellodum/marlin-mingda-md-d301/blob/master/docs/images/mks_wifi_plugin_add_to_cura.png)
+![](https://github.com/marcellodum/marlin-mingda-md-d301/blob/main/docs/images/mks_wifi_plugin_add_to_cura.png?raw=true)
 
 Open Cura and when/if asked syncronize your account data, when "Changes from your account" dialog appeats click the "Next" button:
 
-![](https://github.com/marcellodum/marlin-mingda-md-d301/blob/master/docs/images/mks_wifi_plugin_cura_sync.png)
+![](https://github.com/marcellodum/marlin-mingda-md-d301/blob/main/docs/images/mks_wifi_plugin_cura_sync.png?raw=true)
 
 Complete the installation steps and restart Cura.
 From the Cura printers list click the "Manage printers" button:
 
-![](https://github.com/marcellodum/marlin-mingda-md-d301/blob/master/docs/images/mks_wifi_plugin_manage_printers.png)
+![](https://github.com/marcellodum/marlin-mingda-md-d301/blob/main/docs/images/mks_wifi_plugin_manage_printers.png?raw=true)
 
 Select your Mingda printer and click the "MKS WiFi Plugin" button:
 
-![](https://github.com/marcellodum/marlin-mingda-md-d301/blob/master/docs/images/mks_wifi_plugin_select_printer.png)
+![](https://github.com/marcellodum/marlin-mingda-md-d301/blob/main/docs/images/mks_wifi_plugin_select_printer.png?raw=true)
 
 Check "MKS WiFi Plugin is active for this printer" and click on the "Preview settings" tab:
 
-![](https://github.com/marcellodum/marlin-mingda-md-d301/blob/master/docs/images/mks_wifi_plugin_active_for_printer.png)
+![](https://github.com/marcellodum/marlin-mingda-md-d301/blob/main/docs/images/mks_wifi_plugin_active_for_printer.png?raw=true)
 
 Check "Screenshot support", select "Custom" as "Printer model", set 100 as "Simage" and 200 as "Gimage" and click the "Close" button for this dialog and for the preferences:
 
-![](https://github.com/marcellodum/marlin-mingda-md-d301/blob/master/docs/images/mks_wifi_plugin_preview_settings.png)
+![](https://github.com/marcellodum/marlin-mingda-md-d301/blob/main/docs/images/mks_wifi_plugin_preview_settings.png?raw=true)
 
 After slicing your model as usual, click on the "Save to Disk" split button:
 
-![](https://github.com/marcellodum/marlin-mingda-md-d301/blob/master/docs/images/mks_wifi_plugin_slice_split_button.png)
+![](https://github.com/marcellodum/marlin-mingda-md-d301/blob/main/docs/images/mks_wifi_plugin_slice_split_button.png?raw=true)
 
 From the dropdown select "Save as TFT file" and proceed as usual:
 
-![](https://github.com/marcellodum/marlin-mingda-md-d301/blob/master/docs/images/mks_wifi_plugin_save_as_tft_file.png)
+![](https://github.com/marcellodum/marlin-mingda-md-d301/blob/main/docs/images/mks_wifi_plugin_save_as_tft_file.png?raw=true)
 
 # Legacy Installation (Mingda UI)
 
