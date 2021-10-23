@@ -60,6 +60,8 @@ static void event_handler(lv_obj_t *obj, lv_event_t event) {
       }
       break;
     case ID_MANUAL_RETURN:
+      // Move the nozzle up 10mm
+      queue.inject_P("G1Z10");
       lv_clear_manualLevel();
       lv_draw_tool();
       break;
