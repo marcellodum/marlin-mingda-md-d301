@@ -324,6 +324,9 @@
 #define AUTO_LEVELING_LEVELING_TEXT_T_CN  "_Leveling"
 #define AUTO_LEVELING_PROBE_TEXT_T_CN     "_Probe Tool"
 
+#define PROBE_TOOL_DEPLOY_TEXT_T_CN "_Deploy"
+#define PROBE_TOOL_STOW_TEXT_T_CN   "_Stow"
+
 #define FILESYS_TEXT_T_CN               "文件系統"
 #define WIFI_TEXT_T_CN                  "WIFI"
 #define FAN_TEXT_T_CN                   "風扇"

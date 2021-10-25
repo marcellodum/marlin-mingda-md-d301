@@ -93,6 +93,9 @@
 #define AUTO_LEVELING_LEVELING_TEXT_FR  "_Leveling"
 #define AUTO_LEVELING_PROBE_TEXT_FR     "_Probe Tool"
 
+#define PROBE_TOOL_DEPLOY_TEXT_FR       "_Deploy"
+#define PROBE_TOOL_STOW_TEXT_FR         "_Stow"
+
 #define FILESYS_TEXT_FR               "Fichier"
 #define WIFI_TEXT_FR                  "WiFi"
 #define FAN_TEXT_FR                   "Fan"
@@ -199,6 +202,7 @@
 #define TITLE_EXTRUDE_FR              "Extruder"
 #define TITLE_LEVELING_FR             "Leveling"
 #define TITLE_AUTO_LEVELING_FR        "_Auto Leveling"
+#define TITLE_PROBE_TOOL_FR           "_Probe Tool"
 #define TITLE_SET_FR                  "Paramètres"
 #define TITLE_MORE_FR                 "Plus"
 #define TITLE_CHOOSEFILE_FR           "Fichier"

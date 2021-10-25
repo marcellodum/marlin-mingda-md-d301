@@ -436,6 +436,16 @@ typedef struct auto_leveling_menu_disp {
 
 extern auto_leveling_menu_def auto_leveling_menu;
 
+typedef struct probe_tool_menu_disp {
+  const char *title;
+  const char *deploy;
+  const char *stow;
+
+  char *back;
+} probe_tool_menu_def;
+
+extern probe_tool_menu_def probe_tool_menu;
+
 typedef struct set_menu_disp {
   const char *title;
   const char *filesys;

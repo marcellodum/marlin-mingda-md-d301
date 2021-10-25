@@ -38,6 +38,7 @@ file_menu_def                file_menu;
 extrude_menu_def             extrude_menu;
 leveling_menu_def            leveling_menu;
 auto_leveling_menu_def       auto_leveling_menu;
+probe_tool_menu_def          probe_tool_menu;
 set_menu_def                 set_menu;
 more_menu_def                more_menu;
 wifi_menu_def                wifi_menu;
@@ -937,6 +938,10 @@ void disp_language_init() {
       auto_leveling_menu.leveling = AUTO_LEVELING_LEVELING_TEXT_CN;
       auto_leveling_menu.probe    = AUTO_LEVELING_PROBE_TEXT_CN;
       //
+      probe_tool_menu.title   = TITLE_PROBE_TOOL_CN;
+      probe_tool_menu.deploy  = PROBE_TOOL_DEPLOY_TEXT_CN;
+      probe_tool_menu.stow    = PROBE_TOOL_STOW_TEXT_CN;
+      //
       set_menu.title        = TITLE_SET_CN;
       set_menu.filesys      = FILESYS_TEXT_CN;
       set_menu.wifi         = WIFI_TEXT_CN;
@@ -1187,6 +1192,10 @@ void disp_language_init() {
             auto_leveling_menu.leveling = AUTO_LEVELING_LEVELING_TEXT_T_CN;
             auto_leveling_menu.probe    = AUTO_LEVELING_PROBE_TEXT_T_CN;
             //
+            probe_tool_menu.title   = TITLE_PROBE_TOOL_CN;
+            probe_tool_menu.deploy  = PROBE_TOOL_DEPLOY_TEXT_T_CN;
+            probe_tool_menu.stow    = PROBE_TOOL_STOW_TEXT_T_CN;
+            //
             set_menu.title        = TITLE_SET_T_CN;
             set_menu.filesys      = FILESYS_TEXT_T_CN;
             set_menu.wifi         = WIFI_TEXT_T_CN;
@@ -1426,6 +1435,10 @@ void disp_language_init() {
             auto_leveling_menu.leveling = AUTO_LEVELING_LEVELING_TEXT_EN;
             auto_leveling_menu.probe    = AUTO_LEVELING_PROBE_TEXT_EN;
             //
+            probe_tool_menu.title   = TITLE_PROBE_TOOL_EN;
+            probe_tool_menu.deploy  = PROBE_TOOL_DEPLOY_TEXT_EN;
+            probe_tool_menu.stow    = PROBE_TOOL_STOW_TEXT_EN;
+            //
             set_menu.title        = TITLE_SET_EN;
             set_menu.filesys      = FILESYS_TEXT_EN;
             set_menu.wifi         = WIFI_TEXT_EN;
@@ -1663,6 +1676,10 @@ void disp_language_init() {
             auto_leveling_menu.title    = TITLE_AUTO_LEVELING_RU;
             auto_leveling_menu.leveling = AUTO_LEVELING_LEVELING_TEXT_RU;
             auto_leveling_menu.probe    = AUTO_LEVELING_PROBE_TEXT_RU;
+            //
+            probe_tool_menu.title   = TITLE_PROBE_TOOL_RU;
+            probe_tool_menu.deploy  = PROBE_TOOL_DEPLOY_TEXT_RU;
+            probe_tool_menu.stow    = PROBE_TOOL_STOW_TEXT_RU;
             //
             set_menu.title        = TITLE_SET_RU;
             set_menu.filesys      = FILESYS_TEXT_RU;
@@ -1997,6 +2014,10 @@ void disp_language_init() {
             auto_leveling_menu.leveling = AUTO_LEVELING_LEVELING_TEXT_SP;
             auto_leveling_menu.probe    = AUTO_LEVELING_PROBE_TEXT_SP;
             //
+            probe_tool_menu.title   = TITLE_PROBE_TOOL_SP;
+            probe_tool_menu.deploy  = PROBE_TOOL_DEPLOY_TEXT_SP;
+            probe_tool_menu.stow    = PROBE_TOOL_STOW_TEXT_SP;
+            //
             set_menu.title        = TITLE_SET_SP;
             set_menu.filesys      = FILESYS_TEXT_SP;
             set_menu.wifi         = WIFI_TEXT_SP;
@@ -2234,6 +2255,10 @@ void disp_language_init() {
           auto_leveling_menu.title    = TITLE_AUTO_LEVELING_FR;
           auto_leveling_menu.leveling = AUTO_LEVELING_LEVELING_TEXT_FR;
           auto_leveling_menu.probe    = AUTO_LEVELING_PROBE_TEXT_FR;
+          //
+          probe_tool_menu.title   = TITLE_PROBE_TOOL_FR;
+          probe_tool_menu.deploy  = PROBE_TOOL_DEPLOY_TEXT_FR;
+          probe_tool_menu.stow    = PROBE_TOOL_STOW_TEXT_FR;
           //
           set_menu.title        = TITLE_SET_FR;
           set_menu.filesys      = FILESYS_TEXT_FR;
@@ -2474,6 +2499,10 @@ void disp_language_init() {
           auto_leveling_menu.leveling = AUTO_LEVELING_LEVELING_TEXT_IT;
           auto_leveling_menu.probe    = AUTO_LEVELING_PROBE_TEXT_IT;
           //
+          probe_tool_menu.title   = TITLE_PROBE_TOOL_IT;
+          probe_tool_menu.deploy  = PROBE_TOOL_DEPLOY_TEXT_IT;
+          probe_tool_menu.stow    = PROBE_TOOL_STOW_TEXT_IT;
+          //
           set_menu.title        = TITLE_SET_IT;
           set_menu.filesys      = FILESYS_TEXT_IT;
           set_menu.wifi         = WIFI_TEXT_IT;
@@ -2711,6 +2740,10 @@ void disp_language_init() {
       auto_leveling_menu.title    = TITLE_AUTO_LEVELING_EN;
       auto_leveling_menu.leveling = AUTO_LEVELING_LEVELING_TEXT_EN;
       auto_leveling_menu.probe    = AUTO_LEVELING_PROBE_TEXT_EN;
+      //
+      probe_tool_menu.title   = TITLE_PROBE_TOOL_EN;
+      probe_tool_menu.deploy  = PROBE_TOOL_DEPLOY_TEXT_EN;
+      probe_tool_menu.stow    = PROBE_TOOL_STOW_TEXT_EN;
       //
       set_menu.title        = TITLE_SET_EN;
       set_menu.filesys      = FILESYS_TEXT_EN;

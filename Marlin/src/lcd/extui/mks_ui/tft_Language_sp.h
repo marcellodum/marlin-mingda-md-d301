@@ -93,6 +93,9 @@
 #define AUTO_LEVELING_LEVELING_TEXT_SP  "_Leveling"
 #define AUTO_LEVELING_PROBE_TEXT_SP     "_Probe Tool"
 
+#define PROBE_TOOL_DEPLOY_TEXT_SP   "_Deploy"
+#define PROBE_TOOL_STOW_TEXT_SP     "_Stow"
+
 #define FILESYS_TEXT_SP         "Puerto"
 #define WIFI_TEXT_SP            "WiFi"
 #define FAN_TEXT_SP             "Ventilador"
@@ -198,6 +201,7 @@
 #define TITLE_EXTRUDE_SP            "Extrusor"
 #define TITLE_LEVELING_SP           "Leveling"
 #define TITLE_AUTO_LEVELING_SP      "_Auto Leveling"
+#define TITLE_PROBE_TOOL_SP         "_Probe Tool"
 #define TITLE_SET_SP                "Config"
 #define TITLE_MORE_SP               "Más"
 #define TITLE_CHOOSEFILE_SP         "Imprimir"

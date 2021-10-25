@@ -93,6 +93,9 @@
 #define AUTO_LEVELING_LEVELING_TEXT_IT  "Livellamento"
 #define AUTO_LEVELING_PROBE_TEXT_IT     "Strumento Sonda"
 
+#define PROBE_TOOL_DEPLOY_TEXT_IT       "_Deploy"
+#define PROBE_TOOL_STOW_TEXT_IT         "_Stow"
+
 #define FILESYS_TEXT_IT               "FileSys"
 #define WIFI_TEXT_IT                  "WIFI"
 #define FAN_TEXT_IT                   "Ventola"
@@ -198,6 +201,7 @@
 #define TITLE_EXTRUDE_IT                  "Estrude"
 #define TITLE_LEVELING_IT                 "Livella"
 #define TITLE_AUTO_LEVELING_IT            "Auto Livellamento"
+#define TITLE_PROBE_TOOL_IT               "_Probe Tool"
 #define TITLE_SET_IT                      "Impostare"
 #define TITLE_MORE_IT                     "Di più"
 #define TITLE_CHOOSEFILE_IT               "File"

@@ -31,38 +31,35 @@ extern lv_group_t *g;
 static lv_obj_t *scr;
 
 enum {
-  ID_AL_LEVEL = 1,
-  ID_AL_PROBE,
-  ID_AL_MANUAL_RETURN
+  ID_PT_DEPLOY = 1,
+  ID_PT_STOW,
+  ID_PT_MANUAL_RETURN
 };
 
 static void event_handler(lv_obj_t *obj, lv_event_t event) {
   if (event != LV_EVENT_RELEASED) return;
   switch (obj->mks_obj_id) {
-    case ID_AL_LEVEL:
-      get_gcode_command(AUTO_LEVELING_COMMAND_ADDR, (uint8_t *)public_buf_m);
-      public_buf_m[sizeof(public_buf_m) - 1] = 0;
-      queue.inject_P(PSTR(public_buf_m));
+    case ID_PT_DEPLOY:
+      queue.inject_P(PSTR("M280 P0 S10"));
       break;
-    case ID_AL_PROBE:
-      lv_clear_auto_level();
-      lv_draw_probe_tool();
+    case ID_PT_STOW:
+      queue.inject_P(PSTR("M280 P0 S90"));
       break;
-    case ID_AL_MANUAL_RETURN:
-      lv_clear_auto_level();
-      lv_draw_tool();
+    case ID_PT_MANUAL_RETURN:
+      lv_clear_probe_tool();
+      lv_draw_auto_level();
       break;
   }
 }
 
-void lv_draw_auto_level() {
-  scr = lv_screen_create(AUTO_LEVELING_UI);
-  lv_big_button_create(scr, "F:/bmp_custom1.bin", auto_leveling_menu.probe, BTN_X_PIXEL + INTERVAL_V * 2, titleHeight, event_handler, ID_AL_PROBE);
-  lv_big_button_create(scr, "F:/bmp_return.bin", common_menu.text_back, BTN_X_PIXEL * 3 + INTERVAL_V * 4, BTN_Y_PIXEL + INTERVAL_H + titleHeight, event_handler, ID_AL_MANUAL_RETURN);
-  lv_big_button_create(scr, "F:/bmp_leveling.bin", auto_leveling_menu.leveling, INTERVAL_V, titleHeight, event_handler, ID_AL_LEVEL);
+void lv_draw_probe_tool() {
+  scr = lv_screen_create(PROBE_TOOL_UI);
+  lv_big_button_create(scr, "F:/bmp_return.bin", common_menu.text_back, BTN_X_PIXEL * 3 + INTERVAL_V * 4, BTN_Y_PIXEL + INTERVAL_H + titleHeight, event_handler, ID_PT_MANUAL_RETURN);
+  lv_big_button_create(scr, "F:/bmp_custom1.bin", probe_tool_menu.stow, BTN_X_PIXEL + INTERVAL_V * 2, titleHeight, event_handler, ID_PT_STOW);
+  lv_big_button_create(scr, "F:/bmp_custom2.bin", probe_tool_menu.deploy, INTERVAL_V, titleHeight, event_handler, ID_PT_DEPLOY);
 }
 
-void lv_clear_auto_level() {
+void lv_clear_probe_tool() {
   #if HAS_ROTARY_ENCODER
     if (gCfgItems.encoder_enable) lv_group_remove_all_objs(g);
   #endif

@@ -324,6 +324,9 @@
 #define AUTO_LEVELING_LEVELING_TEXT_CN  "_Leveling"
 #define AUTO_LEVELING_PROBE_TEXT_CN     "_Probe Tool"
 
+#define PROBE_TOOL_DEPLOY_TEXT_CN   "_Deploy"
+#define PROBE_TOOL_STOW_TEXT_CN     "_Stow"
+
 #define FILESYS_TEXT_CN           "文件系统"
 #define WIFI_TEXT_CN              "WIFI"
 #define FAN_TEXT_CN               "风扇"
@@ -428,6 +431,7 @@
 #define TITLE_EXTRUDE_CN            "挤出"
 #define TITLE_LEVELING_CN           "调平"
 #define TITLE_AUTO_LEVELING_CN      "_Auto Leveling"
+#define TITLE_PROBE_TOOL_CN         "_Probe Tool"
 #define TITLE_SET_CN                "设置"
 #define TITLE_MORE_CN               "更多"
 #define TITLE_CHOOSEFILE_CN         "选择文件"
