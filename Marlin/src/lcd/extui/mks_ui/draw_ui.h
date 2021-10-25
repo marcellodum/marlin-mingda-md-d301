@@ -53,6 +53,7 @@
 #include "draw_about.h"
 #include "draw_change_speed.h"
 #include "draw_manuaLevel.h"
+#include "draw_auto_level.h"
 #include "draw_error_message.h"
 #include "printer_operation.h"
 #include "draw_machine_para.h"
@@ -291,6 +292,7 @@ typedef enum {
   FILAMENTCHANGE_UI,
   LEVELING_UI,
   MESHLEVELING_UI,
+  AUTO_LEVELING_UI,
   BIND_UI,
   #if HAS_BED_PROBE
     NOZZLE_PROBE_OFFSET_UI,

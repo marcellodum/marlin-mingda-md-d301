@@ -90,6 +90,9 @@
 #define LEVELING_POINT4_TEXT_FR       "Quatrième"
 #define LEVELING_POINT5_TEXT_FR       "Cinquième"
 
+#define AUTO_LEVELING_LEVELING_TEXT_FR  "_Leveling"
+#define AUTO_LEVELING_PROBE_TEXT_FR     "_Probe Tool"
+
 #define FILESYS_TEXT_FR               "Fichier"
 #define WIFI_TEXT_FR                  "WiFi"
 #define FAN_TEXT_FR                   "Fan"
@@ -195,6 +198,7 @@
 #define TITLE_HOME_FR                 "Acceuil"
 #define TITLE_EXTRUDE_FR              "Extruder"
 #define TITLE_LEVELING_FR             "Leveling"
+#define TITLE_AUTO_LEVELING_FR        "_Auto Leveling"
 #define TITLE_SET_FR                  "Paramètres"
 #define TITLE_MORE_FR                 "Plus"
 #define TITLE_CHOOSEFILE_FR           "Fichier"

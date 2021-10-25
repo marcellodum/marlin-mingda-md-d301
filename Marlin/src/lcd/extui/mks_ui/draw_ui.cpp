@@ -496,6 +496,7 @@ char *getDispText(int index) {
     case FILAMENTCHANGE_UI:   strcpy(public_buf_l, filament_menu.title); break;
     case LEVELING_UI:
     case MESHLEVELING_UI:     strcpy(public_buf_l, leveling_menu.title); break;
+    case AUTO_LEVELING_UI:    strcpy(public_buf_l, auto_leveling_menu.title); break;
     case BIND_UI:             strcpy(public_buf_l, cloud_menu.title); break;
     case TOOL_UI:             strcpy(public_buf_l, tool_menu.title); break;
     case WIFI_LIST_UI:        TERN_(MKS_WIFI_MODULE, strcpy(public_buf_l, list_menu.title)); break;
@@ -909,6 +910,7 @@ void clear_cur_ui() {
     case PRINT_MORE_UI:               break;
     case FILAMENTCHANGE_UI:           lv_clear_filament_change(); break;
     case LEVELING_UI:                 lv_clear_manualLevel(); break;
+    case AUTO_LEVELING_UI:            lv_clear_auto_level(); break;
     #if ENABLED(MKS_WIFI_MODULE)
       case BIND_UI:                   lv_clear_cloud_bind(); break;
     #endif
@@ -1016,6 +1018,7 @@ void draw_return_ui() {
       case PRINT_MORE_UI:               lv_draw_more(); break;
       case FILAMENTCHANGE_UI:           lv_draw_filament_change(); break;
       case LEVELING_UI:                 lv_draw_manualLevel(); break;
+      case AUTO_LEVELING_UI:            lv_draw_auto_level(); break;
       #if ENABLED(MKS_WIFI_MODULE)
         case BIND_UI:                   lv_draw_cloud_bind(); break;
       #endif

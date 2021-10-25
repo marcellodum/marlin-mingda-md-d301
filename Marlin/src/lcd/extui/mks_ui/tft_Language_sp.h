@@ -90,6 +90,9 @@
 #define LEVELING_POINT4_TEXT_SP         "Cuarto"
 #define LEVELING_POINT5_TEXT_SP         "Quinto"
 
+#define AUTO_LEVELING_LEVELING_TEXT_SP  "_Leveling"
+#define AUTO_LEVELING_PROBE_TEXT_SP     "_Probe Tool"
+
 #define FILESYS_TEXT_SP         "Puerto"
 #define WIFI_TEXT_SP            "WiFi"
 #define FAN_TEXT_SP             "Ventilador"
@@ -194,6 +197,7 @@
 #define TITLE_HOME_SP               "Origen"
 #define TITLE_EXTRUDE_SP            "Extrusor"
 #define TITLE_LEVELING_SP           "Leveling"
+#define TITLE_AUTO_LEVELING_SP      "_Auto Leveling"
 #define TITLE_SET_SP                "Config"
 #define TITLE_MORE_SP               "Más"
 #define TITLE_CHOOSEFILE_SP         "Imprimir"

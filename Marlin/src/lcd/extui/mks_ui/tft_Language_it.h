@@ -90,6 +90,9 @@
 #define LEVELING_POINT4_TEXT_IT       "Quarto"
 #define LEVELING_POINT5_TEXT_IT       "Quinto"
 
+#define AUTO_LEVELING_LEVELING_TEXT_IT  "Livellamento"
+#define AUTO_LEVELING_PROBE_TEXT_IT     "Strumento Sonda"
+
 #define FILESYS_TEXT_IT               "FileSys"
 #define WIFI_TEXT_IT                  "WIFI"
 #define FAN_TEXT_IT                   "Ventola"
@@ -194,6 +197,7 @@
 #define TITLE_HOME_IT                     "Home"
 #define TITLE_EXTRUDE_IT                  "Estrude"
 #define TITLE_LEVELING_IT                 "Livella"
+#define TITLE_AUTO_LEVELING_IT            "Auto Livellamento"
 #define TITLE_SET_IT                      "Impostare"
 #define TITLE_MORE_IT                     "Di più"
 #define TITLE_CHOOSEFILE_IT               "File"

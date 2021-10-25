@@ -426,6 +426,16 @@ typedef struct leveling_menu_disp {
 
 extern leveling_menu_def leveling_menu;
 
+typedef struct auto_leveling_menu_disp {
+  const char *title;
+  const char *leveling;
+  const char *probe;
+
+  char *back;
+} auto_leveling_menu_def;
+
+extern auto_leveling_menu_def auto_leveling_menu;
+
 typedef struct set_menu_disp {
   const char *title;
   const char *filesys;

@@ -90,6 +90,9 @@
 #define LEVELING_POINT4_TEXT_RU         "4 точка"
 #define LEVELING_POINT5_TEXT_RU         "5 точка"
 
+#define AUTO_LEVELING_LEVELING_TEXT_RU  "_Leveling"
+#define AUTO_LEVELING_PROBE_TEXT_RU     "_Probe Tool"
+
 #define FILESYS_TEXT_RU                 "система"
 #define WIFI_TEXT_RU                    "WiFi"
 #define FAN_TEXT_RU                     "вентилятор"
@@ -194,6 +197,7 @@
 #define TITLE_HOME_RU                       "Home"
 #define TITLE_EXTRUDE_RU                    "экструзия"
 #define TITLE_LEVELING_RU                   "уровень"
+#define TITLE_AUTO_LEVELING_RU              "_Auto Leveling"
 #define TITLE_SET_RU                        "настройки"
 #define TITLE_MORE_RU                       "больше"
 #define TITLE_CHOOSEFILE_RU                 "файла"

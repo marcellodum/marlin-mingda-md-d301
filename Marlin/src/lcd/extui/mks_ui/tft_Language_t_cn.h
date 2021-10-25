@@ -321,6 +321,9 @@
 #define LEVELING_POINT4_TEXT_T_CN       "第四點"
 #define LEVELING_POINT5_TEXT_T_CN       "第五點"
 
+#define AUTO_LEVELING_LEVELING_TEXT_T_CN  "_Leveling"
+#define AUTO_LEVELING_PROBE_TEXT_T_CN     "_Probe Tool"
+
 #define FILESYS_TEXT_T_CN               "文件系統"
 #define WIFI_TEXT_T_CN                  "WIFI"
 #define FAN_TEXT_T_CN                   "風扇"
